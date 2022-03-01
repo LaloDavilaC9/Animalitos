@@ -37,17 +37,17 @@ function iniciar(){
     var img = new Image();
     var img2 = new Image();
     var img3 = new Image();
-    i = nivel-1;
+    i = nivel*3-3;
     img.src = "../recursos/habitat/"+generados[i]+".jpg";
     img.onload = function(){
         lienzo.drawImage(img, -89,0,455,700);
     }
-    i +=nivel;
+    i ++;
     img2.src = "../recursos/habitat/"+generados[i]+".jpg";
     img2.onload = function(){
         lienzo.drawImage(img2, 400, 0,455,700);
     }
-    i +=nivel;
+    i ++;
     img3.src = "../recursos/habitat/"+generados[i]+".jpg";
     img3.onload = function(){
         lienzo.drawImage(img3, 900, 0,455,700);
