@@ -1,9 +1,9 @@
-function fondo() {
-    var canvas = document.getElementById("myCanvas");
-    var ctx = canvas.getContext("2d");
+function fondo(){
+    var fondo = document.getElementById("fondo");
+    var f = fondo.getContext("2d");
     var img = new Image();
-    img.src = "recursos/habitat/marcoIndex.png";
+    img.src = "/recursos/habitat/marcoIndex.png";
     img.onload = function(){
-        ctx.drawImage(img,200,200,600,20);
+        f.drawImage(img, 420,0);
     }
 }
