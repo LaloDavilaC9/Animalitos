@@ -4,6 +4,8 @@ var repetidos = []; //Este es un array que nos ayuda a barajear opciones para qu
 var posiciones = [];
 var nivel = 1;
 var nombreArrastrado="";
+var music;
+var correctos=0;
 function inicializar(){
     var imagenes = document.querySelectorAll('#animales > img');
     for (var i=0;i<imagenes.length;i++){
@@ -78,44 +80,40 @@ function finalizado(e){
 function arrastrado(e){
     elemento = e.target;
     e.dataTransfer.setData('Text',elemento.getAttribute('id'));
-   
-    //console.log("El valor es: "+nombreArrastrado);
-    //console.log("E target "+elemento.id);
     e.dataTransfer.setDragImage(e.target,0,0);
 }
 
 function soltado(e){
     e.preventDefault();
     var id=e.dataTransfer.getData('Text');
-    /* console.log("EL ATRIBUTO ES: "+id); */
-
+    console.log("EL ATRIBUTO ES: "+id); 
     var elemento = document.getElementById(id);
     img = elemento.src;
     img = img.substring(img.length-5,img.length-4); //Se obtiene el nombre de la imagen que se está arrastrando (el cual es un número sin la extensión png)
 
-
-    /* console.log("El valor es: "+img); */
     var posx = e.pageX - soltar.offsetLeft;
     var posy = e.pageY - soltar.offsetTop;
-    /* console.log("Repetidos = "+repetidos);
-    console.log("X = "+posx);
-    console.log("Y = "+posy); 
-    console.log("Aparición: "+repetidos.indexOf(parseInt(img)));*/
+
     //Se verifican las posiciones y el arrastre
-    if(repetidos.indexOf(parseInt(img)) == 0 && posx>=0 && posx<=455 && posy>=0 && posy<=700 ){
+    if( ( repetidos.indexOf(parseInt(img)) == 0 && posx>=0 && posx<=455 && posy>=0 && posy<=700) || ( repetidos.indexOf(parseInt(img)) == 1 && posx>=456 && posx<=910 && posy>=0 && posy<=700  ) || ( repetidos.indexOf(parseInt(img)) == 2 && posx>=911 && posx<=1365 && posy>=0 && posy<=700  ) ){
+        music = new Audio('../recursos/sonidos/'+img+'.mp3');
         lienzo.drawImage(elemento,posx,posy);
-    }
-    else if(repetidos.indexOf(parseInt(img)) == 1 && posx>=456 && posx<=910 && posy>=0 && posy<=700 ){
-        lienzo.drawImage(elemento,posx,posy);
-    }
-    else if(repetidos.indexOf(parseInt(img)) == 2 && posx>=911 && posx<=1365 && posy>=0 && posy<=700 ){
-        lienzo.drawImage(elemento,posx,posy);
+        correctos++;
     }
     else{
-        console.log("NO ATINADO");
+        music = new Audio('../recursos/sonidos/error.mp3');
+        //console.log("NO ATINADO");
     }
    
-    
+    music.play();
+    music.loop =false;
+    music.playbackRate = 1;
+    if(correctos==3){
+        cambiar();
+    }
+    else if(correctos==6){
+        finJuego();
+    }
 }
 
 function generarAleatorios(){
@@ -149,6 +147,7 @@ function cambiar(){
     else
         nivel=1;
     document.getElementById("titulo").innerHTML="Nivel de juego #"+nivel;
+    document.getElementById("encabezado").innerHTML="Nivel de juego #"+nivel;
     repetidos = [];
     iniciar();
 }
@@ -156,4 +155,8 @@ function cambiar(){
 function shuffle(array) {
     //Esta función barajea el array
     array.sort(() => Math.random() - 0.5);
-  }
+}
+
+function finJuego(){
+    window.location.href="../findeJuego.html";
+}
