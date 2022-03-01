@@ -13,12 +13,14 @@ function inicializar(){
     soltar.addEventListener('dragenter',eventoEnter,false);
     soltar.addEventListener('dragover',eventoOver,false);
     soltar.addEventListener('drop',soltado,false);
+    generarAleatorios();
     iniciar();
 }
 function iniciar(){
-    generarAleatorios();
+    
     var j=1;
-    for(var i=nivel-1;i<(3*nivel);i+=nivel){
+    for(var i=(nivel*3 - 3);i<(3*nivel);i++){
+        console.log("Valor de I = "+i);
         var imagen = new Image();
         imagen.src = '../recursos/animales/'+generados[i]+'.png';
         document.getElementById('imagen'+j).src = imagen.src;
@@ -99,7 +101,7 @@ function generarAleatorios(){
         }while(generados.find(element => element == random) == random);
         //Se mete el random al arreglo de generados
         generados.push(random);
-        //console.log("El random es: "+random);
+        console.log("El random es: "+random);
     }
 }
 
@@ -107,7 +109,7 @@ function generarAleatorios(){
 window.addEventListener('load',inicializar,false);
 
 function cambiar(){
-    generados = [];
+    //generados = [];
     if(nivel==1)
         nivel=2;
     else
