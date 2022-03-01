@@ -1,0 +1,15 @@
+#habitats{
+    float: left;
+    width: 500px;
+    height: 500px;
+    margin: 10px;
+    border: 1px solid #999999;
+}
+
+#animales{
+    float: left;
+    width: 500px;
+    height: 500px;
+    margin: 10px;
+    border: 1px solid #999999;
+}
