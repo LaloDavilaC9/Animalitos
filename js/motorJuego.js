@@ -114,5 +114,6 @@ function cambiar(){
         nivel=2;
     else
         nivel=1;
+    document.getElementById("titulo").innerHTML="Nivel de juego #"+nivel;
     iniciar();
 }
