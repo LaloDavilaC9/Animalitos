@@ -20,3 +20,26 @@ html, body,header{
     background: radial-gradient(ellipse at center, rgba(138,189,0,1) 0%, rgba(82,162,7,1) 100%);
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#8abd00', endColorstr='#52a207', GradientType=1 );
 }
+#contenedor{
+    position:absolute; z-index: 1;
+    left: 40%;
+    top: 30%;
+}
+#titulo{
+    font-size: 30px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    
+}
+#formNombre{
+    border: 100px solid yellow;
+    border-radius: 5px;
+    background-color: #70b96f
+}
+#logo{
+    width: 1000px;
+    height: 1000px;
+}
+#logo{
+    left: 100%;
+    top: 100%;
+}
