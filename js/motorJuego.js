@@ -6,6 +6,7 @@ var nivel = 1;
 var nombreArrastrado="";
 var music;
 var correctos=0;
+
 function inicializar(){
     var imagenes = document.querySelectorAll('#animales > img');
     for (var i=0;i<imagenes.length;i++){
