@@ -4,11 +4,11 @@ function fondo(){
     var img = new Image();
     img.src = "/recursos/habitat/marcoIndex.png";
     img.onload = function(){
-        f.drawImage(img, 0,0,1920,1050);
+        f.drawImage(img, 0,0,fondo.width,fondo.height);
     }
-    var c = document.getElementById("fondo");
-    var ctx = c.getContext("2d");
-    ctx.font = "75px Courier New";
-    ctx.textAlign = "center";
-    ctx.fillText("Animal Chooser", c.width/2, c.height/7);
+    var logo = new Image();
+    logo.src = "/recursos/habitat/logo.png";
+    logo.onload = function(){
+        f.drawImage(logo,fondo.width/2,1);
+    }
 }
