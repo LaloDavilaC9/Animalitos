@@ -22,8 +22,9 @@ html, body,header{
 }
 #contenedor{
     position:absolute; z-index: 1;
-    left: 40%;
+    left: 35%;
     top: 30%;
+    width: 30%;
 }
 #titulo{
     font-size: 30px;
@@ -31,8 +32,9 @@ html, body,header{
 }
 #formNombre{
     border: 100px solid yellow;
-    border-radius: 5px;
-    background-color: #70b96f
+    border-radius: 40px;
+    background-color: #70b96f80;
+    width: 100%;
 }
 #logo{
     width: 1000px;
@@ -41,4 +43,12 @@ html, body,header{
 #logo{
     left: 100%;
     top: 100%;
+}
+#botonNombre{
+    border-color: green;
+    border-radius: 8px;
+    width: 20%;
+    padding: 6px 20px;
+    font-weight: 700;
+    font-size: 16px;
 }

@@ -12,14 +12,14 @@
 </head>
 <body>
     <div align="center" id="contenedor"><br>
-        <div class="container">
+        <div id="contenedorForm" class="container">
+            <br><br><br><br>
                 <form id="formNombre" class="border p-5 form">
                     <div class="form-group" style="align-content: center;">
                         <label id="titulo" for="nombreCompleto1">Nombre completo</label>
                         <input type="text" class="form-control" id="nombreCompleto" aria-describedby="emailHelp" placeholder="Nombre completo">
-                            <small id="infoNombre" class="form-text text-muted">Preocura escribir bien la informacion para evitar errores</small>
                     </div>
-                    <button type="button" class="btn btn-primary" onclick="generarDiploma()">Generar</button>
+                    <button id="botonNombre" type="button" class="btn btn-light" onclick="guardarNombre()">Generar</button>
                 </form>
         </div>
         <br>
