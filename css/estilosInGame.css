@@ -2,3 +2,19 @@ html{
     background-image: url("/recursos/habitat/fondoInGame.png");
     overflow: hidden;
 }
+#animales{
+    float: center;
+}
+#habitats{
+    float: center;
+    width: 100%;
+}
+#animales > img{
+    float: center;
+}
+#encabezado{
+    font-family: 'Sansita Swashed', cursive;
+    font-size: 60px;
+    background-color: rgba(114, 165, 12, 0.473)
+}
+@import url('https://fonts.googleapis.com/css2?family=Sansita+Swashed:wght@300&display=swap');

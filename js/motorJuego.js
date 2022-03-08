@@ -44,18 +44,18 @@ function iniciar(){
     azar();
     img.src = "../recursos/habitat/"+repetidos[0]+".jpg";
     img.onload = function(){
-        lienzo.drawImage(img, 0,0,455,700);
+        lienzo.drawImage(img, 200,0,soltar.width/6,700);
     }
     
     img2.src = "../recursos/habitat/"+repetidos[1]+".jpg";
     img2.onload = function(){
-        lienzo.drawImage(img2, 455, 0,455,700);
+        lienzo.drawImage(img2, 710, 0,soltar.width/6,700);
     }
 
    
     img3.src = "../recursos/habitat/"+repetidos[2]+".jpg";
     img3.onload = function(){
-        lienzo.drawImage(img3, 910, 0,455,700);
+        lienzo.drawImage(img3, 1220, 0,soltar.width/6,700);
     }
     
 }
@@ -96,7 +96,7 @@ function soltado(e){
     var posy = e.pageY - soltar.offsetTop;
 
     //Se verifican las posiciones y el arrastre
-    if( ( repetidos.indexOf(parseInt(img)) == 0 && posx>=0 && posx<=455 && posy>=0 && posy<=700) || ( repetidos.indexOf(parseInt(img)) == 1 && posx>=456 && posx<=910 && posy>=0 && posy<=700  ) || ( repetidos.indexOf(parseInt(img)) == 2 && posx>=911 && posx<=1365 && posy>=0 && posy<=700  ) ){
+    if( ( repetidos.indexOf(parseInt(img)) == 0 && posx>=200 && posx<=700 && posy>=0 && posy<=700) || ( repetidos.indexOf(parseInt(img)) == 1 && posx>=700 && posx<=1210 && posy>=0 && posy<=700  ) || ( repetidos.indexOf(parseInt(img)) == 2 && posx>=1210 && posx<=1500 && posy>=0 && posy<=700  ) ){
         music = new Audio('../recursos/sonidos/'+img+'.mp3');
         lienzo.drawImage(elemento,posx,posy);
         correctos++;
@@ -147,8 +147,8 @@ function cambiar(){
         nivel=2;
     else
         nivel=1;
-    document.getElementById("titulo").innerHTML="Nivel de juego #"+nivel;
-    document.getElementById("encabezado").innerHTML="Nivel de juego #"+nivel;
+    document.getElementById("titulo").innerHTML="NIVEL DE JUEGO #"+nivel;
+    document.getElementById("encabezado").innerHTML="NIVEL DE JUEGO #"+nivel;
     repetidos = [];
     iniciar();
 }
