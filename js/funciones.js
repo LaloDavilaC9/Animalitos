@@ -29,8 +29,8 @@ function fondo(){
     }
 }*/
 function guardarNombre() {
-    localStorage.nombre = document.getElementById("nombreCompleto").value;
+    localStorage.nombre = document.getElementById("validationCustom01").value;
     alert("Iniciando juego");
-    document.getElementById("nombreCompleto").value="";
+    document.getElementById("validationCustom01").value="";
     window.open('nivel.html','_self');
 }

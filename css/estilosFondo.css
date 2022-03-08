@@ -31,10 +31,10 @@ html, body,header{
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
 #formNombre{
-    border: 100px solid yellow;
+    border: 100px;
     border-radius: 40px;
     background-color: #70b96f80;
-    width: 100%;
+    width: 70%;
 }
 #logo{
     width: 1000px;
@@ -47,7 +47,7 @@ html, body,header{
 #botonNombre{
     border-color: green;
     border-radius: 8px;
-    width: 20%;
+    width: 30%;
     padding: 6px 20px;
     font-weight: 700;
     font-size: 16px;

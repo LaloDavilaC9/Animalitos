@@ -13,13 +13,21 @@
 <body>
     <div align="center" id="contenedor"><br>
         <div id="contenedorForm" class="container">
-            <br><br><br><br>
-                <form id="formNombre" class="border p-5 form">
-                    <div class="form-group" style="align-content: center;">
-                        <label id="titulo" for="nombreCompleto1">Nombre completo</label>
-                        <input type="text" class="form-control" id="nombreCompleto" aria-describedby="emailHelp" placeholder="Nombre completo">
+            <br><br><br><br><br>
+                <form id="formNombre" class="row g-1 needs-validation" novalidate>
+                    <div class="col-md-12">
+                        <br><br>
+                        <label id="titulo" for="validationCustom01" class="form-label">Nombre completo</label>
+                        <input type="text" class="form-control" id="validationCustom01" placeholder="Escribe aquí..." required>
+                        <div class="invalid-feedback">
+                        Please provide a valid city.
+                        </div>
                     </div>
-                    <button id="botonNombre" type="button" class="btn btn-light" onclick="guardarNombre()">Generar</button>
+                    <div class="col-12">
+                        <br>
+                        <button id="botonNombre" class="btn btn-primary" type="button" onclick="guardarNombre()">Jugar</button>
+                        <br><br><br><br>
+                    </div>
                 </form>
         </div>
         <br>
