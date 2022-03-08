@@ -110,9 +110,10 @@ function soltado(e){
     music.loop =false;
     music.playbackRate = 1;
     if(correctos==3){
+        correctos++;
         cambiar();
     }
-    else if(correctos==6){
+    else if(correctos==7){
         finJuego();
     }
 }
