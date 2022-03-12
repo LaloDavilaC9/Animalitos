@@ -75,7 +75,6 @@ function eventoOver(e){
 function finalizado(e){
     elemento = e.target;
     console.log("soy el evento FINALIZADO");
-    //elemento.style.visibility = 'hidden';
 }
 
 function arrastrado(e){
@@ -100,20 +99,25 @@ function soltado(e){
         music = new Audio('../recursos/sonidos/'+img+'.mp3');
         lienzo.drawImage(elemento,posx,posy);
         correctos++;
+        elemento.style.visibility = 'hidden';
     }
     else{
         music = new Audio('../recursos/sonidos/error.mp3');
         //console.log("NO ATINADO");
     }
-   
+    music.volume = 0.2;
     music.play();
     music.loop =false;
     music.playbackRate = 1;
     if(correctos==3){
         correctos++;
+        document.getElementById('imagen1').style.visibility = 'visible';
+        document.getElementById('imagen2').style.visibility = 'visible';
+        document.getElementById('imagen3').style.visibility = 'visible';
         cambiar();
     }
     else if(correctos==7){
+        sleep(3000);
         finJuego();
     }
 }
@@ -162,3 +166,13 @@ function shuffle(array) {
 function finJuego(){
     window.location.href="../findeJuego.html";
 }
+
+function sleep(milliseconds) {
+    var start = new Date().getTime();
+    for (var i = 0; i < 1e7; i++) {
+     if ((new Date().getTime() - start) > milliseconds) {
+      break;
+     }
+    }
+}
+   

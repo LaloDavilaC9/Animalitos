@@ -4,9 +4,31 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Fin de juego</title>
+    <script src="/js/funciones.js"></script>
+    <link rel="stylesheet" href="css/estilosFondofin.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 </head>
 <body>
-    <h1>FELICIDADES</h1>
+
+    <div align="center" id="contenedor">
+        <label id="nombre" for="validationCustom01" class="form-label">Nombre completo</label>
+            
+        <div class="col-12">
+            <br>
+            <button id="botonNombre" class="btn btn-primary" type="button" onclick="creditos()">Creditos</button>
+            <button id="botonNombre" class="btn btn-primary" type="button" onclick="jugarDeNuevo()">Jugar de nuevo</button>
+            <br><br><br><br>
+        </div>
+        <br>
+    </div>
+
+
+    <div id="fondoFade">
+        <canvas id="fondoFinal" height="1040" width="1800"></canvas>
+    </div>
+    <script>
+        fondoFinal();
+    </script>
 </body>
 </html>
